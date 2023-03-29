@@ -32,7 +32,7 @@ for match_id in ids:
     base_url = f'https://www.ligue1.com/match?matchId={match_id}'
 
     option = Options()
-    driver = webdriver.Chrome("C:/Users/paulc/Documents/Football Data project/DroppingOddsScraper/chromedriver.exe",
+    driver = webdriver.Chrome("your path to chrome webdriver here",
                               options=option)
     driver.get(base_url)
 
@@ -399,13 +399,13 @@ for key, value in final_df['AwayTeam'].iteritems():
 
 errors = pd.DataFrame(errors)
 
-errors.to_csv('C:/Users/paulc/Documents/Ligue1/datasets/errors.csv')
+errors.to_csv('your path here')
 
 # read in existing dataframe and append
 
-existing_df = pd.read_csv('C:/Users/paulc/Documents/Ligue1/datasets/ligue1_2223.csv')
+existing_df = pd.read_csv('your path here')
 
 # Append df2 to df1
 new_df = pd.concat([existing_df, final_df], axis=0)
 
-new_df.to_csv('C:/Users/paulc/Documents/Ligue1/datasets/ligue1_2223.csv', index=False)
+new_df.to_csv('your path here', index=False)
